@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<title>INICIO ETPEL</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<!------ Include the above in your HEAD tag ---------->
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+<link rel="stylesheet" type="text/css"  media="screen" href="../css/login.css" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </head>
+
+
+<body class="bg-default">
+<div class="main-content">
+<!-- Navbar -->
+<nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+<div class="container px-4">
+<a class="navbar-brand" href="https://www.creative-tim.com/product/argon-dashboard" target="_blank">
+ETPEL
+
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbar-collapse-main">
+<!-- Collapse header -->
+<div class="navbar-collapse-header d-md-none">
+<div class="row">
+<div class="col-6 collapse-brand">
+<a href="../index.html">
+ETPEL
+</a>
+</div>
+<div class="col-6 collapse-close">
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+<span></span>
+<span></span>
+</button>
+</div>
+</div>
+</div>
+
+
+
+<!-- Navbar items -->
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link nav-link-icon" href="/register" ">
+<i class="bi bi-person-plus-fill"></i>
+<span class="nav-link-inner--text">Registro</span>
+</a>
+</li>
+
+</ul>
+</div>
+</div>
+</nav>
+<!-- Header -->
+<div class="header bg-gradient-primary py-7 py-lg-8">
+<div class="container">
+<div class="header-body text-center mb-7">
+<div class="row justify-content-center">
+<div class="col-lg-5 col-md-6">
+<h1 class="text-white">ENCUENTRA TU PROFESOR EN LINEA</h1>
+<p class=" text-white"> La herramienta perfecta para encontrar el profesor que cumpla tus expectativas y horario.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="separator separator-bottom separator-skew zindex-100">
+<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+</svg>
+</div>
+</div>
+<!-- Page content -->
+<div class="container mt--8 pb-5">
+<div class="row justify-content-center">
+<div class="col-lg-5 col-md-7">
+<div class="card bg-secondary shadow border-0">
+
+<div class="card-body px-lg-5 py-lg-5">
+<div class="text-center text-muted mb-4">
+    <div class="text-center logo">ETPEL</div>
+
+<small>Inicia sesión con tus credenciales</small>
+</div>
+
+
+
+<form id="formLogin" action="/login" method="POST">
+    <div class="form-group mb-3">
+<div class="input-group input-group-alternative">
+<div class="input-group-prepend">
+<span class="input-group-text"><i class="bi bi-person-lines-fill"></i></span>
+</div>
+<input class="form-control" id="rut" name="rut" placeholder="RUT" type="text">
+</div>
+</div>
+<div class="form-group">
+<div class="input-group input-group-alternative">
+<div class="input-group-prepend">
+<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+</div>
+<input class="form-control" placeholder="Contraseña" id="pass" name="pass" type="password">
+
+</div>
+
+
+<div class="text-center">
+    <button type="submit" class="btn btn-primary my-4">Entrar</button>
+    </div>
+</div>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+  <% if(alert) { %>
+    <script>
+      Swal.fire({
+        title: '<%= alertTitle %>',
+        text:'<%= alertMessage %>',
+        icon:'<%= alertIcon %>',
+        showConfirmButton: <%= showConfirmButton %>,
+        timer: <%= timer %>
+      }).then(()=>{
+        window.location = '/<%= ruta %>'
+      })
+    </script>
+  <% } %>
+
+
+
+
+<!-- Footer -->
+<footer class="py-5">
+<div class="container ">
+<div class="row align-items-center justify-content-xl-between">
+<div class="col-xl-6">
+<div class="copyright text-center text-xl-left text-muted">
+© 2022 <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1" target="_blank">Proyecto de Titulo</a>
+</div>
+</div>
+<div class="col-xl-6">
+<ul class="nav nav-footer justify-content-center justify-content-xl-end">
+<li class="nav-item">
+<a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+</li>
+<li class="nav-item">
+<a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+</li>
+<li class="nav-item">
+<a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+  <% if(alert) { %>
+    <script>
+      Swal.fire({
+        title: '<%= alertTitle %>',
+        text:'<%= alertMessage %>',
+        icon:'<%= alertIcon %>',
+        showConfirmButton: <%= showConfirmButton %>,
+        timer: <%= timer %>
+      }).then(()=>{
+        window.location = '/<%= ruta %>'
+      })
+    </script>
+  <% } %>
+
+</body>
+
+
+
+
+

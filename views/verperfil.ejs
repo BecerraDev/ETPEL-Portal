@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>ETPEL</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css"  media="screen" href="../css/verperfil.css" />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+
+
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+  <!-- Sidebar -->
+  <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+      <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+      <!-- Bootstrap List Group -->
+      <ul class="list-group">
+          <!-- Separator with title -->
+          <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+              <small> MENU PRINCIPAL</small>
+          </li>
+
+          <!-- /END Separator -->
+          <!-- Menu with submenu -->
+          <% if (rutEstudiante) { %>
+          <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="fa fa-user fa-fw mr-3"></span>
+                <span class="menu-collapsed">Inicio</span>
+                  <span class="submenu-icon ml-auto"></span>
+
+              </div>
+          </a>
+          <!-- Submenu content -->
+          <div id='submenu1' class="collapse sidebar-submenu">
+              <a href="/perfilalumno/<%= rutEstudiante %>" class="list-group-item list-group-item-action bg-secondary font-weight: bolder;">
+                  <span class="menu-collapsed">Mi cuenta</span>
+              </a>
+          
+              <a href="/actualizardatosalumno/<%= rutEstudiante %>" class="list-group-item list-group-item-action bg-dark text-white">
+                  <span class="menu-collapsed">Editar cuenta</span>
+              </a>
+        
+          </div>
+
+              <!-- MENU 2 BUSQUEDA -->
+          <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="fa fa-search fa-fw mr-3"></span>
+                <span class="menu-collapsed">Busqueda</span>
+                  <span class="submenu-icon ml-auto"></span>
+              </div>
+          </a>    
+          <div id='submenu2' class="collapse sidebar-submenu">
+
+  
+            <a href="/verpublicacion/<%=rutEstudiante%>" class="list-group-item list-group-item-action bg-dark text-white">
+              <span class="menu-collapsed selectbotton">Buscar docente</span>
+          </a>
+
+           </div>
+
+
+  <!-- MENU 3 CHAT -->
+        
+  <a href="#submenu3" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-start align-items-center">
+      <span class="fa fa-envelope-o fa-fw mr-3"></span>
+      <span class="menu-collapsed">Mensaje</span>
+        <span class="submenu-icon ml-auto"></span>
+    </div>
+</a>    
+<div id='submenu3' class="collapse sidebar-submenu">
+
+
+  <a href="/bandejadeentrada/<%=rutEstudiante%>" class="list-group-item list-group-item-action bg-dark text-white">
+    <span class="menu-collapsed">Bandeja de mensajes</span>
+</a>
+<a href="/chat" class="list-group-item list-group-item-action bg-dark text-white">
+  <span class="menu-collapsed">Charla global</span>
+</a>
+ </div>
+
+ <!-- MENU 4 FAVORITOS -->
+
+ <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+  <div class="d-flex w-100 justify-content-start align-items-center">
+    <span class="fa Example of heart fa-heart fa-fw mr-3"></span>
+    <span class="menu-collapsed">Favorito</span>       
+     <span class="submenu-icon ml-auto"></span>
+  </div>
+</a>    
+<div id='submenu4' class="collapse sidebar-submenu">
+
+
+<a href="/mostrarfavorito/<%=rutEstudiante%>" class="list-group-item list-group-item-action bg-dark text-white">
+  <span class="menu-collapsed">Ver favoritos</span>
+</a>
+
+</div>
+          <% } %>
+          <!-- Separator without title -->
+          <li class="list-group-item sidebar-separator menu-collapsed"></li>
+          <!-- /END Separator -->
+          <a href="/logout" class="bg-dark list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span class="fa fa-power-off fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Cerrar sesión</span>
+              </div>
+          </a>
+          <a href="#top" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+              <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                  <span id="collapse-text" class="menu-collapsed"></span>
+              </div>
+          </a>
+      </ul><!-- List Group END-->
+  </div><!-- sidebar-container END -->
+  
+<!-- FIN -->
+
+  <!-- MAIN -->
+    <div class="col p-6 colorfondo">
+
+   
+
+
+      <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+        <!-- Brand -->
+        <a class="titulo" href="#">
+          ETPEL    </a>
+        <!-- Form -->
+       
+        <!-- User -->
+
+   
+  
+        <span></span>
+        </div>
+       
+
+       
+    </nav>
+
+
+
+
+
+
+      
+      
+    </nav><!-- NavBar END -->
+
+
+ 
+      <!------ Include the above in your HEAD tag ---------->
+      
+      <div class="main-content">
+      <!-- Top navbar -->
+
+      <div class="form-group mb-0">
+      <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+      </div>
+      </div>
+      </div>
+      <!-- User -->
+    
+     
+      </div>
+      </nav>
+      <!-- Header -->
+      <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+   
+      <!-- Page content -->
+      <div class="container-fluid mt--7">
+      <div class="row">
+      <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+      <div class="row justify-content-center">
+      <div class="col-lg-3 order-lg-2">
+      <div class="card-profile-image">
+      <a href="#">
+        <form method="post" action="/favorito">
+          <% if (rutEstudiante) { %>
+            <input id="rut" name="rut" value="<%= rutEstudiante %>" hidden>
+          <% } %> 
+          
+          <% consultaPerfil.forEach(docente => { %>
+            <img src="<%= docente.imagen %>" class="rounded-circle">
+      </a>
+      </div>
+      </div>
+      </div>
+      <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+      <div class="d-flex justify-content-between">
+      <a href="#exampleModalvalorizar"    data-toggle="modal" data-target="#exampleModalvalorizar"  class="btn btn-sm btn-info mr-4 ">Valorizar</a>
+      <button class="btn btn-success btn-sm" type="submit"name="favorito" value="<%=docente.rut%>">Favoritos</button>
+
+    </div>
+      
+    </div>
+      <div class="card-body pt-0 pt-md-4">
+      <div class="row">
+      <div class="col">
+      <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+    
+       
+          
+      </div>
+      </div>
+      </div>
+ 
+
+      <input hidden name="nombre" value="<%= docente.nombre %>">
+      <input hidden name="ap_pat" value="<%= docente.ap_pat %>">
+      <input hidden name="descripcion" value="<%= docente.descripcion %>">
+      <input hidden name="imagen" value="<%= docente.imagen %>">
+
+      <div class="text-center profile-usertitle paddingfoto">
+        <div class="profile-usertitle-name paddingfoto">
+          <%=docente.nombre %> <%= docente.ap_pat %><span class="font-weight-light">
+        </div>
+        <div class="profile-usertitle-job ">
+          Docente
+          <br>
+        <br>  <h3><span> <%=docente.puntaje_valoracion%>★</span> </h3>
+             </div>
+
+        <div class="profile-userbuttons">
+
+
+    				</div>
+       
+      </form>
+      <hr class="my-4">
+
+      <p>  “ <%= docente.descripcion %> ”</p>
+
+      <div  class="text-left">
+        <h5>  <i class="fa fa-volume-control-phone" aria-hidden="true"></i> : +56 <%= docente.telefono %> <br> <i class="fa fa-envelope" aria-hidden="true"></i> :
+          <%= docente.correo %> </h5>
+  
+        </div>
+
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0">
+      <div class="row align-items-center">
+      <div class="col-8">
+      <h3 class="mb-0">Lista de publicaciones</h3>
+      </div>
+
+      </div>
+      </div>
+      <div class="card-body">
+   
+
+
+
+
+
+
+
+
+           
+                  <!-- Carousel items -->
+                      <div class="row">
+
+
+                        <% if (rutEstudiante) { %>
+                          
+        <input id="rut" name="rut" value="<%= rutEstudiante %>" hidden>
+        <% } %>
+
+
+
+        <% consultaPublicaciones.forEach((publicacion)=>{ %>
+
+                        <div class="col-md-4" >
+                          <div class="item-box-blog">
+                            <div class="item-box-blog-image">
+                              <!--Date-->
+                              <div class="item-box-blog-date bg-blue-ui white"> <span class="mon"><%= publicacion.nombre_comuna %></span> </div>
+                              <!--Image-->
+                              <figure> <img alt="" src="https://cdn.pixabay.com/photo/2017/02/08/14/25/computer-2048983_960_720.jpg"> </figure>
+                            </div>
+                            <div class="item-box-blog-body">
+                              <!--Heading-->
+                              <div class="item-box-blog-heading">
+                                <a href="#" tabindex="0">
+                                  <h5><%= publicacion.titulo %></h5>
+                                </a>
+                              </div>
+                              <!--Data-->
+                              <div class="item-box-blog-data" style="padding: px 15px;     font-size: 13px;">
+                                <i class="fa fa-user-circle-o"></i> <%= publicacion.nombre_asignatura %>  | <i class="fa fa-book"></i> <%= publicacion.grado_nombre %><br>
+                              </div>
+                              <!--Text-->
+                              <div class="item-box-blog-text">
+                                <p><%= publicacion.resumen %></p>
+                              </div>
+                              
+                              <div class="item-box-blog-text">
+                    
+                              </div>
+                              <div class="mt"> <a tabindex="0" class=" btn btn-default"  data-toggle="modal" data-target="#exampleModal<%= publicacion.id_publicacion %> ">Detalles</a> </div>
+                            </div>
+                            </div>
+                        
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="modal fade" id="exampleModal<%= publicacion.id_publicacion %>" tabindex="-1" role="dialog"  class="alturamodal"aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog alturamodal" role="document">
+                              <div class="modal-content ">
+                                  <div class="modal-header ">
+                      
+                                    
+                                    <h5>Detalle de la clase</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">×</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <div class="form-group mb-4">
+       
+                                    <h1><%= publicacion.titulo %></h1>         
+                                    <p><i class="fa fa-user-circle-o"></i> <%= publicacion.nombre_asignatura %>  | <i class="fa fa-book"></i> <%= publicacion.grado_nombre %>  
+                                      | <i class="fa fa-laptop"></i> <%= publicacion.modalidad_nombre %></p> <p><i class="fa  fa-taxi"></i> <%= publicacion.nombre_comuna %> | <i class="fa fa-dollar"></i> <%= publicacion.precio %></p>
+                                      <div style="">
+                                        
+                                        <h4 class="tamaño1"><%= publicacion.resumen %></h4>    
+                                      </div>
+                                    <div class="input-group date " id="datetimepicker12" data-target-input="nearest">
+                                     
+                                      <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <h5 class="tamaño1"><%= publicacion.contenido %></h5>    
+
+                                      </div>
+
+                                  </div>
+        
+                              </div>
+                          </div>
+                      </div>
+
+                        
+    <!--EJEMPLO         
+
+
+
+
+                        <div class="col-md-4" >
+                          <div class="item-box-blog">
+                            <div class="item-box-blog-image">
+                              <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">Augu 01</span> </div>
+                              <figure> <img alt="" src="https://cdn.pixabay.com/photo/2017/02/08/14/25/computer-2048983_960_720.jpg"> </figure>
+                            </div>
+                            <div class="item-box-blog-body">
+                              <div class="item-box-blog-heading">
+                                <a href="#" tabindex="0">
+                                  <h5>News Title</h5>
+                                </a>
+                              </div>
+                              <div class="item-box-blog-data" style="padding: px 15px;">
+                                <p><i class="fa fa-user-o"></i> Admin, <i class="fa fa-comments-o"></i> Comments(3)</p>
+                              </div>
+                              <div class="item-box-blog-text">
+                                <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
+                              </div>
+                              <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                
+                
+                -->
+                
+
+
+
+
+                
+                <% }) %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+      </div>
+    </div>
+  </div>
+ 
+ 
+    </div><!-- Main Col END -->
+</div><!-- body-row END -->
+
+
+
+<% }) %>
+
+
+
+
+
+<div class="modal fade" id="exampleModalvalorizar" tabindex="-1" role="dialog"  class="alturamodal"aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog alturamodal" role="document">
+      <div class="modal-content ">
+          <div class="modal-header ">
+         
+
+         
+            
+            <h5>Valorarizar profesor</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <form method="post" action="/reputacion">
+            aca esta
+          <% if (rutEstudiante) { %>
+            <input id="rut_a" name="rut_a" value="<%= rutEstudiante %>"  >
+          <% } %> 
+          <% consultaPerfil.forEach((rutDocente)=>{ %>
+            <input  name="rut_valorar" value="<%=rutDocente.rut%>" >
+            <% }) %>
+          <div class="modal-body">
+              <div class="form-group mb-4">
+            
+            <div class="input-group date " id="datetimepicker12" data-target-input="nearest">
+             
+              <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                <h3 class="tamaño1"> 
+              
+                   
+                <label> Describe la clase <br><input required class="form-control form-control-alternative" name="comentario" id="comentario" placeholder="Agrega un comentario">   </label>
+                <fieldset class="rating">
+                    <legend> Da un valor. </legend>
+                  
+                    <input id="demo-1" type="radio" name="demo" value="1" checked> 
+                    <label for="demo-1">1 star</label>
+                    <input id="demo-2" type="radio" name="demo" value="2">
+                    <label for="demo-2">2 stars</label>
+                    <input id="demo-3" type="radio" name="demo" value="3">
+                    <label for="demo-3">3 stars</label>
+                    <input id="demo-4" type="radio" name="demo" value="4">
+                    <label for="demo-4">4 stars</label>
+                    <input id="demo-5" type="radio" name="demo" value="5">
+                    <label for="demo-5">5 stars</label>
+                    <div class="stars text-center">
+                        <label for="demo-1" aria-label="1 star" title="1 star"></label>
+                        <label for="demo-2" aria-label="2 stars" title="2 stars"></label>
+                        <label for="demo-3" aria-label="3 stars" title="3 stars"></label>
+                        <label for="demo-4" aria-label="4 stars" title="4 stars"></label>
+                        <label for="demo-5" aria-label="5 stars" title="5 stars"></label>   
+                    </div>
+                    <h5 >"Entre más alto bueno."</h5>
+
+                    </h3>
+                </fieldset>
+              
+                <script>
+                    (function(){
+                        var rating = document.querySelector('.rating');
+                        var handle = document.getElementById('toggle-rating');
+                        handle.onchange = function(event) {
+                            rating.classList.toggle('rating', handle.checked);
+                        };
+                    }());
+                </script>
+              
+            <div  class="text-right">
+              
+              <button  class="btn btn-primary align-items-right" type="submit" >VALORAR</button>
+                 </form>
+            </div>
+                </h5>    
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div><!-- body-row END -->	<script type="text/javascript">
+	// Hide submenus
+$('#body-row .collapse').collapse('hide'); 
+
+// Collapse/Expand icon
+$('#collapse-icon').addClass('fa-angle-double-left'); 
+
+// Collapse click
+$('[data-toggle=sidebar-colapse]').click(function() {
+    SidebarCollapse();
+});
+
+function SidebarCollapse () {
+    $('.menu-collapsed').toggleClass('d-none');
+    $('.sidebar-submenu').toggleClass('d-none');
+    $('.submenu-icon').toggleClass('d-none');
+    $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+    
+    // Treating d-flex/d-none on separators with title
+    var SeparatorTitle = $('.sidebar-separator-title');
+    if ( SeparatorTitle.hasClass('d-flex') ) {
+        SeparatorTitle.removeClass('d-flex');
+    } else {
+        SeparatorTitle.addClass('d-flex');
+    }
+    
+    // Collapse/Expand icon
+    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+}	</script>
+
+
+
+
+<footer class="py-5 bg-dark">
+  <div class="container ">
+  <div class="row align-items-center justify-content-xl-between">
+  <div class="col-xl-6">
+  <div class="copyright text-center text-xl-left text-muted">
+  © 2022 <a class="font-weight-bold ml-1" target="_blank">Proyecto de Titulo</a>
+  </div>
+  </div>
+  <div class="col-xl-6">
+  <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+  <li class="nav-item">
+  <a href="/" class="nav-link" target="_blank">ETPEL</a>
+  </li>
+  <li class="nav-item">
+  <a href="/" class="nav-link" target="_blank">Acerca de nosotros</a>
+  </li>
+  <li class="nav-item">
+  </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  </footer>
+</body>
+</html>
+
+

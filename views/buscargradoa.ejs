@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>buscar asignatura </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+
+
+    <form method="post" action="/verpublicaciongradoa">
+
+        <div class="mb-3">
+            <label for="user" class="form-label">Seleccione su grado academico</label>
+            <select class="form-control" id="gradoacademico-dropdown" name="gradoa">
+              <option value="1" name="educacionsuperior">	Educación superior </option>
+              <option value="2" name="enseñanzamedia">Enseñanza media</option>
+              <option value="3" name="enseñanzabasica">Enseñanza basica</option>
+              </select> 
+        </div>
+          <button type="submit" class="btn btn-primary" >Buscar grado academico</button>
+      </form>  

@@ -1,0 +1,590 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css"  media="screen" href="../css/register.css" />
+  </head>
+  
+  <body class="bg-default">
+  <div class="main-content">
+  <!-- Navbar -->
+  <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+  <div class="container px-4">
+  <a class="navbar-brand" href="https://www.creative-tim.com/product/argon-dashboard" target="_blank">
+  ETPEL
+  
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar-collapse-main">
+  <!-- Collapse header -->
+  <div class="navbar-collapse-header d-md-none">
+  <div class="row">
+  <div class="col-6 collapse-brand">
+  <a href="../index.html">
+  ETPEL
+  </a>
+  </div>
+  <div class="col-6 collapse-close">
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+  <span></span>
+  <span></span>
+  </button>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <!-- Navbar items -->
+  <ul class="navbar-nav ml-auto">
+  
+  <li class="nav-item">
+  <a class="nav-link nav-link-icon" href="/login"">
+  <i class="bi bi-key-fill"></i>
+  <span class="nav-link-inner--text">Inicio</span>
+  </a>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </nav>
+  <!-- Header -->
+  <div class="header bg-gradient-primary py-7 py-lg-8">
+  <div class="container">
+  <div class="header-body text-center mb-7">
+  <div class="row justify-content-center">
+  
+  <!-- Page content -->
+  
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  
+  
+   
+    <div class="col-75">
+      <div class="container2">
+        <form action="/register"onsubmit="verificarPasswords(); return false" method="POST">        
+          <h2 class=>Formulario de Registro</h2>
+  
+            <div class="col-40">
+              <!------  <h3>Información personal</h3>---------->
+             
+  
+              <label for="fname"><i class="fa fa-user"></i> RUT </label>
+              <input type="text" id="rut" name="rut" maxlength="10" oninput="checkRut(this)" placeholder="Ingrese RUT" required>
+  
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" pattern="[a-zA-Z ]{3,254}" title="Sólo permite letras."   placeholder="Ej. Miguel" required>
+                </div>
+  
+                <div class="col-50">
+                  <label for="">Segundo Nombre</label>
+                  <input type="text" id="snombre" name="snombre"  pattern="[a-zA-Z ]{3,254}" title="Sólo permite letras." placeholder="Ej. Juan" required>
+                </div>
+  
+              </div>
+  
+  
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Apellido Materno</label>
+                  <input type="text" id="ap_mat" name="ap_mat"  pattern="[a-zA-Z ]{3,254}" title="Sólo permite letras, mayor de 2 caracteres." placeholder="Ej. Sepulveda" required>
+                </div>
+  
+                <div class="col-50">
+                  <label for="">Apellido Paterno</label>
+                  <input type="text" id="ap_pat" name="ap_pat"  pattern="[a-zA-Z ]{3,254}" title="Sólo permite letras." placeholder="Ej. Gomez" required>
+                </div>
+  
+              </div>
+              
+  
+  
+           
+              <!------  <h3>Contacto</h3>---------->
+              <label for="email"><i class="fa fa-envelope"></i> Correo</label>
+              <input type="email" id="correo" name="correo" placeholder="....@ejemplo.com" required>
+  
+              <label for="fname"><i class="fa fa-user"></i> Telefono </label>
+               <input type="text" id="telefono" name="telefono" pattern="[0-9]{9}"  placeholder="Número de movil ejemplo: 946930497"  required oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+  
+              <label for="fname"><i class="fa fa-user"></i> Clave </label>
+              <input type="text" id="pass" name="pass" placeholder="Contraseña mayor de 5 y maximo 10." title="Contraseña mayor de 5 y maximo 10." required  maxlength="10" minlength="5">
+  
+              <label for="fname"><i class="fa fa-user"></i> Repetir Clave </label>
+              <input type="text" id="pass1" name="pass1" placeholder="Repetir contraseña anterior" required maxlength="10" minlength="5">
+  
+              <div id="msg"></div>
+   
+              <!-- Mensajes de Verificación -->
+              <div id="error" class="alert alert-danger ocultar" role="alert">
+                  Las Contraseñas no coinciden, vuelve a intentar !
+              </div>
+              <div id="ok" class="alert alert-success ocultar" role="alert">
+                  Las Contraseñas coinciden ! (Procesando formulario ... )
+              </div>
+  
+  
+              <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+  
+              <label for="fname"><i class="fa fa-user"></i> Foto de Perfil </label>
+  
+              <div class="user-image">
+                <img id="prevImage" class='user-image' src="https://cdn-icons-png.flaticon.com/512/848/848006.png" class="img ">
+   
+              </div>
+              <input type="text" class=''id="imagen" name="imagen" placeholder="Cargar imagen desde URL automaticamente" required>
+         
+              <select class="fname classselect" id="id_rol" name="id_rol">
+                <option value="1" name="docente"> Docente </option>
+                <option value="2" name="Alumno" checked> Alumno </option>
+             
+                </select> 
+  
+  
+  
+  
+  
+            </button>
+            <input type="submit" value="Finalizar Registro " class="btn">
+  
+        </form>
+                  </div>
+                </div>
+  
+    <script>
+     document.getElementById('imagen').addEventListener("change", function(){ 
+      document.getElementById('prevImage').src=this.value;
+    });
+    </script>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  </div>
+  
+  
+  
+  <!-- Footer -->
+  <footer class="py-5">
+  <div class="container">
+  <div class="row align-items-center justify-content-xl-between">
+  <div class="col-xl-6">
+  <div class="copyright text-center text-xl-left text-muted">
+  © 2022 <a href="" class="font-weight-bold ml-1" target="_blank">Proyecto de Titulo</a>
+  </div>
+  </div>
+  <div class="col-xl-6">
+  <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+  <li class="nav-item">
+  <a href="" class="nav-link" target="_blank">CIISA</a>
+  </li>
+  <li class="nav-item">
+  <a href="" class="nav-link" target="_blank">2022</a>
+  </li>
+  <li class="nav-item">
+  <a href=" class="nav-link" target="_blank">ETPEl</a>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  </footer>
+  
+  
+  
+  </body>
+  
+   
+  
+  <script>
+  
+  function checkRut(rut) {
+      // Despejar Puntos
+      var valor = rut.value.replace('.','');
+      // Despejar Guión
+      valor = valor.replace('-','');
+      
+      // Aislar Cuerpo y Dígito Verificador
+      cuerpo = valor.slice(0,-1);
+      dv = valor.slice(-1).toUpperCase();
+      
+      // Formatear RUN
+      rut.value = cuerpo + '-'+ dv
+      
+      // Si no cumple con el mínimo ej. (n.nnn.nnn)
+      if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false;}
+      
+      // Calcular Dígito Verificador
+      suma = 0;
+      multiplo = 2;
+      
+      // Para cada dígito del Cuerpo
+      for(i=1;i<=cuerpo.length;i++) {
+      
+          // Obtener su Producto con el Múltiplo Correspondiente
+          index = multiplo * valor.charAt(cuerpo.length - i);
+          
+          // Sumar al Contador General
+          suma = suma + index;
+          
+          // Consolidar Múltiplo dentro del rango [2,7]
+          if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+    
+      }
+      
+      // Calcular Dígito Verificador en base al Módulo 11
+      dvEsperado = 11 - (suma % 11);
+      
+      // Casos Especiales (0 y K)
+      dv = (dv == 'K')?10:dv;
+      dv = (dv == 0)?11:dv;
+      
+      // Validar que el Cuerpo coincide con su Dígito Verificador
+      if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
+      
+      // Si todo sale bien, eliminar errores (decretar que es válido)
+      rut.setCustomValidity('');
+  }
+  
+   // NO DEJA METER ESPACIOS
+  $("#nombre").keyup(function(){              
+          var ta      =   $("#nombre");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  $("#snombre").keyup(function(){              
+          var ta      =   $("#snombre");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  $("#ap_mat").keyup(function(){              
+          var ta      =   $("#ap_mat");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  $("#ap_pat").keyup(function(){              
+          var ta      =   $("#ap_pat");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  $("#correo").keyup(function(){              
+          var ta      =   $("#correo");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  
+  $("#telefono").keyup(function(){              
+          var ta      =   $("#telefono");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  
+  $("#imagen").keyup(function(){              
+          var ta      =   $("#imagen");
+          letras      =   ta.val().replace(/ /g, "");
+          ta.val(letras)
+  }); 
+  
+  
+  
+  
+   
+  function verificarPasswords() {
+   
+   // Ontenemos los valores de los campos de contraseñas 
+   pass1 = document.getElementById('pass');
+   pass2 = document.getElementById('pass1');
+  
+   // Verificamos si las constraseñas no coinciden 
+   if (pass1.value != pass2.value) {
+  
+       // Si las constraseñas no coinciden mostramos un mensaje 
+       document.getElementById("error").classList.add("mostrar");
+  
+       return false;
+   } else {
+  
+       // Si las contraseñas coinciden ocultamos el mensaje de error
+       document.getElementById("error").classList.remove("mostrar");
+  
+       // Mostramos un mensaje mencionando que las Contraseñas coinciden 
+       document.getElementById("ok").classList.remove("ocultar");
+  
+       // Desabilitamos el botón de login 
+       document.getElementById("login").disabled = true;
+  
+       // Refrescamos la página (Simulación de envío del formulario) 
+       setTimeout(function() {
+           location.reload();
+       }, 3000);
+  
+       return true;
+   }
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <style>
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+   
+  .ocultar {
+      display: none;
+  }
+   
+  .mostrar {
+      display: block;
+  }
+   
+  
+  
+  .formulario__label {
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .formulario__grupo-input {
+    position: relative;
+  }
+  
+  .formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+  }
+  
+  .formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+  }
+  
+  .formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+  }
+  
+  .formulario__input-error-activo {
+    display: block;
+  }
+  
+  .formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+  }
+  
+  .formulario__checkbox {
+    margin-right: 10px;
+  }
+  
+  .formulario__grupo-terminos, 
+  .formulario__mensaje,
+  .formulario__grupo-btn-enviar {
+    grid-column: span 2;
+  }
+  
+  .formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+  }
+  
+  .formulario__mensaje-activo {
+    display: block;
+  }
+  
+  .formulario__mensaje p {
+    margin: 0;
+  }
+  
+  .formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+  }
+  
+  .formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+  }
+  
+  .formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+  }
+  
+  .formulario__mensaje-exito-activo {
+    display: block;
+  }
+  
+  /* ----- -----  Estilos para Validacion ----- ----- */
+  .formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+  }
+  
+  .formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+  }
+  
+  .formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+  }
+  
+  .formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+  }
+  
+  
+  /* ----- -----  Mediaqueries ----- ----- */
+  @media screen and (max-width: 800px) {
+    .formulario {
+      grid-template-columns: 1fr;
+    }
+  
+    .formulario__grupo-terminos, 
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar {
+      grid-column: 1;
+    }
+  
+    .formulario__btn {
+      width: 100%;
+    }
+  }
+  
+  </style>
+  
+  
+  
+  <script>
+    alert("Bienvenido. Recuerda llenar tu nombre completo, rut y clave porque serán los definitivo, estos datos no se pueden editar, solo los datos de contacto.  ");
+  </script>

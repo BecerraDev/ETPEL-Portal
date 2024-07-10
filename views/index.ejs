@@ -1,0 +1,307 @@
+<head>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <!------ Include the above in your HEAD tag ---------->
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+  
+  <body>
+  
+      <header class="">
+          <div class="container">
+              <nav class="navbar navbar-expand-lg navbar-light ">
+                  <a class="navbar-brand" href="#">
+
+        <h2> ETPEL Bienvenido:
+ 
+          <% if (rut) { %>
+            <span class="badge bg-success"><%= rut.nombre %></span>  <span class="badge bg-success"><%= rut.ap_pat %></span>
+            <input value="<%=rut.rut%>" name="rut" id="rut" hidden>
+             <input value="<%= rut.id_rol %>" name="rol" id="rol" hidden>
+     
+        </h2>
+    </a>
+
+                  <button class="navbar-toggler" type="button" data-toggle="slide-collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item">
+                              <a class="nav-link ">ACCEDER COMO </a>
+                            </li>         
+        <li class="nav-item">
+
+ 
+ <a id="docente" class="nav-link" href="perfildocente/<%=rut.rut%>/<%=rut.id_rol%>">DOCENTE <i class="bi bi-book"></i></a>        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="perfilalumno/<%=rut.rut%>/<%=rut.id_rol%>">ALUMNO <i class="bi bi-person-fill"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">SALIR</a>
+        </li>
+     
+        <% } %>
+      </ul>
+                  </div>
+              </nav>
+          </div>
+      </header>
+      <div class="menu-overlay"></div>
+  
+  
+  
+  
+  
+  <section class="py-5 bg-1 text-white">
+      <div class="container py-5">
+       <div class="row">
+              <div class="col-md-6">
+                <p>Traspasamos limites</p>
+                <h1>ENCUENTRA TU PROFESOR EN LÍNEA</h1>
+                <p>Gracias por ser parte de nosotros. ETPEL te ofrece multiples funcionalidades que te permitiran desarrollarte como docente u estudiante, en este apartamos te explicaremos los inicios de ETPEL y nuestro objetivo a seguir.</p>
+  
+              </div>
+              <div class="col-md-6 d-none d-lg-block">
+                  <div class="welcome-layer-3 ">
+                      <div class="home3-layer-1 wow fadeInRight" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                      <img src="https://clipart.world/wp-content/uploads/2020/08/cartoon-teacher-png-trasparent.png" alt="" class="div-img">
+                      </div>
+                  </div>
+                  
+                
+              </div>
+          </div>
+      </div>   
+  </section>
+  <section class="py-5 bg-2">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                <img src="https://pngimg.com/uploads/teacher/teacher_PNG32.png">
+              </div>
+              <div class="col-md-6">
+                <p>¡FUNCIONALIDADES!</p>
+                <h1>¿Qué tiene interesante ETPEL?</h1>
+                <b>Búsqueda de docentes</b>
+                <p> Una exclusiva herramienta para los alumnos que facilita la búsqueda de docentes con distintos filtros para hallar una mejor experiencia.</p>
+                <b>Publicación de clase</b>
+                <p> Promueve tus clases particulares a los alumnos de todo Chile, con la asignatura y modalidad que más te acomode.</p>
+                <b>Mensajería</b>
+                <p>La comunicación es lo más importante, por eso ETPEL ofrece una herramienta que permita la interacción entre estudiante y docente.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="py-5 ">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                <p>Nacimiento y consolidación</p>
+                <h1>INTRODUCCIÓN A ETPEL</h1>
+                <p>Actualmente, debido a la contingencia que vive nuestro país bajo el covid-19, tanto estudiantes, docentes como establecimientos educativos se han visto en la obligación de cambiar su proceso de educación presencial a uno online. </p>
+                  <p>Si bien esta nueva opción cumple con el objetivo de apoyar al estudiante, no todos están satisfechos, puesto que muchos necesitan emplear de manera práctica los conocimientos de la clase, la transmisión de la videollamada puede verse afectada y una cantidad de estudiantes o docentes no están bien preparados para esta nueva mecánica.  
+                      
+                  </p>
+  
+  
+                  <p>No se busca mejorar la clase, sino ayudar al estudiante a buscar y comunicarse con un docente que se ajuste a sus exigencias ofreciendo una nueva alternativa para los estudiantes que no están satisfechos con sus respectivas clases por medio de un software web que permita la búsqueda de un docente según su modalidad o comuna, con el fin de ayudar al estudiante que no está satisfecho con su modalidad actual (tanto presencial como online) y auxiliar a la persona que necesita otro docente para reforzar su educación.</p>
+  
+                
+              </div>
+              <div class="col-md-6">
+                <img src="https://img.freepik.com/vector-gratis/estudiante-profesor-tailandes-regreso-escuela-nuevo-concepto-normal_40876-2262.jpg?size=626&ext=jpg">
+              </div>
+              
+          </div>
+      </div>
+  </section>
+  <section class="py-5 bg-2 ">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-md-12">
+                <p>GRANDES EXPECTATIVAS</p>
+                <h1>¿Qué otra funciones proporciona?</h1>
+                <p>No somos un mercado, ni una herramienta para videoclases, sólo entregamos la ayuda necesaria para la reunión de los docentes y alumnos, los docentes tienen plena libertad para enseñar.</p>
+               
+               
+                
+              </div>
+              
+              
+          </div>
+          <div class="row mt-4 text-center">
+              <div class="col-md-3">
+                  <i class="fa fa-thumbs-o-up fa-4x text-success"></i>
+                  <h4>EDITOR DE PUBLICACIÓN</h4>
+                  <p>Se puede editar los contenidos de la clase y eliminar la publicación</p>
+              </div>
+              <div class="col-md-3">
+                  <i class="fa fa-thumbs-o-up fa-4x text-success"></i>
+                  <h4>CHAT GLOBAL</h4>
+                  <p> Mensajería global entre docentes y estudiantes</p>
+              </div>
+              <div class="col-md-3">
+                  <i class="fa fa-thumbs-o-up fa-4x text-success"></i>
+                  <h4>EVALUACIÓN</h4>
+                  <p>Entregar un valor a un docente segun su desempeño</p>
+              </div>
+              <div class="col-md-3">
+                  <i class="fa fa-thumbs-o-up fa-4x text-success"></i>
+                  <h4>FILTROS</h4>
+                  <p> Cuatro tipo de filtros para mayor presición</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="py-5 ">
+      <div class="container">
+          <div class="row text-center">
+              
+              <div class="col-md-12">
+                <p>NUESTRO OBJETIVO</p>
+                <h1>SEGUIREMOS EN BUSCA DE ENCONTRAR NUEVAS ALTERNATIVAS</h1>
+                
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="py-5 bg-1 text-white">
+      <div class="container py-5">
+       <div class="row">
+           <div class="col-md-4">
+                <h2>EQUIPO CIISA</h2>
+              <p>Desarrollado por Nicolas Muñoz y Byron Becerra.
+  </p>
+    
+          </div>
+      </div>   
+  </section>
+  
+
+
+
+  <% if(alert) { %>
+    <script>
+      Swal.fire({
+        title: '<%= alertTitle %>',
+        text:'<%= alertMessage %>',
+        icon:'<%= alertIcon %>',
+        showConfirmButton: <%= showConfirmButton %>,
+        timer: <%= timer %>
+      }).then(()=>{
+        window.location = '/<%= ruta %>'
+      })
+    </script>
+  <% } %>
+
+
+  
+
+
+  
+
+
+
+  </body>
+  <script>
+  
+  
+  $('[data-toggle="slide-collapse"]').on('click', function() {
+      $navMenuCont = $($(this).data('target'));
+      $navMenuCont.animate({
+        'width': 'toggle'
+      }, 350);
+      $(".menu-overlay").fadeIn(500);
+  
+    });
+    $(".menu-overlay").click(function(event) {
+      $(".navbar-toggler").trigger("click");
+      $(".menu-overlay").fadeOut(500);
+    });
+  
+  
+    </script>
+  
+  <style>
+  
+  img {width:100%;}
+  @media only screen and (max-width: 767px) {
+    #navbarTogglerDemo02 {
+      position: fixed;
+      top: 0;
+      left: 15px;
+      z-index: 99;
+      width: 280px;
+      height: 100%;
+      background-color: #ddd;
+      overflow: auto;
+    }
+    .menu-overlay {
+      display: none;
+      background-color: #000;
+      bottom: 0;
+      left: 0;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      /* IE7 & 8 */
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 49;
+    }
+  
+  }
+  
+  
+  
+  .div-img {width:60%; transform: rotate(10deg); }
+  
+  .welcome-layer-3 {
+      height: 100%;
+      /* left: 0; */
+      position: absolute;
+      top: 0;
+      left: 200px;
+      width: 100%;
+  }
+  .home3-layer-1 {
+      right: 10%;
+      top: -18%;
+  }
+  .welcome-layer-3 > div {
+      position: absolute;
+  }
+  
+  img {max-width: 100%;  height: auto; }
+  
+  .bg-1 {
+   background-image: url("http://quomodosoft.com/html/applic/applic/assets/img/background/green_bg.png");
+   background-color: #cccccc;
+  }
+  .bg-2 {
+   background-image: url("http://quomodosoft.com/html/applic/applic/assets/img/bg-layers/map-layer.png");
+   background-color: #cccccc;
+  }
+  
+  </style>
+  
+  
+  

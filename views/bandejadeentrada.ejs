@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>ETPEL</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" type="text/css"  media="screen" href="/css/perfildocente.css" />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+  <div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+        <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+        <!-- Bootstrap List Group -->
+        <ul class="list-group">
+            <!-- Separator with title -->
+            <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small> MENU PRINCIPAL</small>
+            </li>
+
+            <!-- /END Separator -->
+            <!-- Menu with submenu -->
+            <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span class="fa fa-user fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Inicio</span>
+                    <span class="submenu-icon ml-auto"></span>
+
+                </div>
+            </a>
+            <!-- Submenu content -->
+            <div id='submenu1' class="collapse sidebar-submenu">
+                <% if (rut) { %>
+                  <a  href="/perfildocente/<%=rut.rut%>/<%=rut.id_rol%>"class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed selectbotton">Mi cuenta</span>
+                </a>
+                <a href="/actualizardatosdocente/<%= rut.rut %>" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Editar cuenta</span>
+                </a>
+          
+            </div>
+            <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span class="fa fa-dashboard fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Publicación</span>
+                    <span class="submenu-icon ml-auto"></span>
+                </div>
+            </a>
+ 
+
+            <!-- Submenu content -->
+            <div id='submenu2' class="collapse sidebar-submenu">
+
+              <a href="/publicar/<%= rut.rut %>" class="list-group-item list-group-item-action bg-dark text-white">
+                <span class="menu-collapsed">Nueva publicación</span>
+            </a>
+                <a href="/publicaciones/<%= rut.rut %>" class="list-group-item list-group-item-action bg-dark text-white">
+                  <span class="menu-collapsed">Visualizar y editar</span>                </a>
+              
+
+
+            </div>
+            <a href="#submenu3" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="fa fa-envelope-o fa-fw mr-3"></span>
+                <span class="menu-collapsed">Mensaje</span>
+                  <span class="submenu-icon ml-auto"></span>
+              </div>
+          </a>    
+          <div id='submenu3' class="collapse sidebar-submenu">
+        
+        
+            <a href="/bandejadeentrada/<%=rut.rut%>" class="list-group-item list-group-item-action bg-dark text-white">
+              <span class="menu-collapsed">Bandeja de mensajes</span>
+          </a>
+          <a href="/chat" class="list-group-item list-group-item-action bg-dark text-white">
+            <span class="menu-collapsed">Charla global</span>
+        </a>
+           </div>
+           <% } %>
+            </a>
+            <!-- Separator without title -->
+            <li class="list-group-item sidebar-separator menu-collapsed"></li>
+            <!-- /END Separator -->
+            <a href="/logout" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-power-off fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Cerrar sesión</span>
+                </div>
+            </a>
+            <a href="#top" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                    <span id="collapse-text" class="menu-collapsed"></span>
+                </div>
+            </a>
+        </ul><!-- List Group END-->
+    </div><!-- sidebar-container END -->
+    <div class="col p-6 colorfondo">
+
+   
+
+
+      <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+        <!-- Brand -->
+        <a class="titulo" href="#">
+          ETPEL    </a>
+        <!-- Form -->
+       
+        <!-- User -->
+
+   
+  
+        <span></span>
+        </div>
+       
+
+       
+    </nav>
+
+
+
+
+
+
+      
+      
+    </nav><!-- NavBar END -->
+
+
+ 
+      
+
+      <div class="main-content">
+      <!-- Top navbar -->
+
+      <div class="form-group mb-0">
+      <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+      </div>
+      </div>
+      </div>
+      <!-- User -->
+    
+     
+      </div>
+      </nav>
+      <!-- Header -->
+      <div class="header   d-flex align-items-center" style="height: 25rem; background-image: url(https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+   
+
+
+
+
+
+
+
+
+
+
+  <% if (rut) { %>
+
+
+
+     
+
+
+
+
+
+    
+    
+  <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+      <input id="rut" name="rut" value="<%= rut.rut %>" hidden>
+    <% } %>  
+  
+      <thead>
+          <tr>
+              <th >NOMBRE</th>
+              <th hidden></th>
+              <th> FECHA</th>
+              <th>MENSAJE</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr><% results.forEach((user)=>{ %>
+               <td hidden ><%= user.id_chat %> </td>
+                <td ><%= user.nombre %> <%= user.snombre %> <%= user.ap_pat %> <%= user.ap_mat %></td>
+                <td ><%= user.fechaFormateada %> <%= user.hora %> </td>
+                <td hidden><%= user.receptor %></td>
+                <td> Te mando un mensaje</td>
+                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal<%= user.id_chat %>">
+                  Ver mensaje
+              </button> </td>
+          
+            
+         
+          </tr>
+  
+  
+  
+         
+          <div class="modal fade" id="exampleModal<%= user.id_chat %>" tabindex="-1" role="dialog"  class="alturamodal"aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog alturamodal" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header ">
+        
+                      
+                      <h5>TE RESPONDE </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mb-4">
+        
+                           <div style="">
+                            <%= user.mensaje %>
+               
+                        </div>
+                      <div class="input-group date " id="datetimepicker12" data-target-input="nearest">
+                       
+                        <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+  
+  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+  
+                        </div>
+  
+                    </div>
+                    <div class="modal-footer py-5">
+                      <a  href="/enviarmensajebandeja/<%= user.emisor %>" class="btn btn-outline-info"><i class='bx '></i>RESPONDER</a>
+  
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+  
+  
+      </div>
+  
+            
+         <% }) %>
+       
+        </div>
+      </div>
+    </div>
+      </tbody>
+  </table>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+</body>
+  <!-- MAIN -->
+
+
+
+  
+
+<footer class="py-5 bg-dark">
+  <div class="container ">
+  <div class="row align-items-center justify-content-xl-between">
+  <div class="col-xl-6">
+  <div class="copyright text-center text-xl-left text-muted">
+  © 2022 <a class="font-weight-bold ml-1" target="_blank">Proyecto de Titulo</a>
+  </div>
+  </div>
+  <div class="col-xl-6">
+  <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+  <li class="nav-item">
+  <a href="/" class="nav-link" target="_blank">ETPEL</a>
+  </li>
+  <li class="nav-item">
+  <a href="/" class="nav-link" target="_blank">Acerca de nosotros</a>
+  </li>
+  <li class="nav-item">
+  </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  </footer>
+
+      
+  
+             
+                  
+  
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

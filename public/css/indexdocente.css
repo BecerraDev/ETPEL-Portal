@@ -1,0 +1,321 @@
+.logoetpel{
+    font-family: Segoe UI;
+    font-weight: bold;
+
+  }
+  .dropdown-toggle::after {
+    display: none;
+}
+.body{
+  zoom: 120%;
+}
+  .boton1{
+    background: none;
+  border: 0;
+  color: white;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+   -webkit-appearance: button; /* for input */
+     -moz-user-select: none;
+      -ms-user-select: none;
+  }
+.jumbotron1{
+  height: 20px;
+
+}
+.fotoperfil{
+  background-color: #77DD77;
+}
+  /*
+** Style Simple Ecommerce Theme for Bootstrap 4
+** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
+*/
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.category_block li:hover {
+    background-color: #007bff;
+}
+.category_block li:hover a {
+    color: #ffffff;
+}
+.category_block li a {
+    color: #343a40;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
+footer {
+    background: #343a40;
+    padding: 40px;
+}
+footer a {
+    color: #f8f9fa!important
+}
+body{
+    background-color: #f3f3f3;
+   
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+
+}
+p {
+    font-size: 0.875rem;
+    margin-bottom: .5rem;
+    line-height: 1.3rem;
+}
+
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e7eaed;
+    border-radius: 0;
+}
+.card .card-description {
+    margin-bottom: .875rem;
+    font-weight: 400;
+    color: #76838f;
+}
+
+
+
+
+
+
+.profile-header {
+	height: 150px;
+	width: 100%;
+	position: relative;
+}
+
+.cover-image {
+	height: 150px;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+
+.user-image {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	bottom: -30%;
+	left: 45%;
+	/* top: 50%; */
+	transform: translate(-50%, -50%);
+	z-index: 5;
+}
+
+.user-image img {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	top: -40px;
+	border: 3.5px solid #777;
+}
+
+.profile-card .profile-content {
+	padding: 50px 20px 30px 20px;
+}
+
+
+
+.profile-card .profile-name {
+	font-size: 1.2rem;
+	color: #3249b9;
+	font-weight: 600;
+	text-align: center;
+}
+
+.profile-card .profile-designation {
+	font-size: 13px;
+	color: #777;
+	text-align: center;
+}
+
+.profile-card .profile-description {
+	padding: 10px;
+	font-size: 13px;
+	color: #777;
+	margin: 5px 0px;
+	background-color: #F1F2F3;
+	border-radius: 5px;
+}
+
+.profile-card ul.profile-info-list {
+	padding: 0;
+	margin: 10px 0;
+	list-style: none;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #777;
+}
+
+
+
+
+.profile-card ul.profile-info-list a {
+	text-decoration: none;
+	color:inherit;
+}
+
+
+
+.profile-card a.profile-info-list-item {
+	margin: 10px 0;
+	padding:15px;
+	background-color: #F1F2F3;
+	display: block;
+	 -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+
+}
+
+.profile-card a.profile-info-list-item:hover {
+    background-color: #9E9E9E;
+    color: white;
+	 -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+	
+}
+
+
+.profile-card a.profile-info-list-item  i {
+	padding: 10px;
+	
+}
+
+ul.about {
+    list-style: none;
+    color: black;
+	padding: 0;
+}
+li.about-items {
+    margin: 10px;
+    font-size: 0.9rem;
+    /* font-family: sans-serif; */
+    /* font-weight: 400; */
+}
+
+
+
+li.about-items i {
+color:#607d8b;
+}
+
+span.about-item-name {
+    width: 100px;
+    display: inline-flex;
+	    margin-left: 10px;
+}
+
+
+span.about-item-detail {
+    display: inline-flex;
+    width: calc(100% - 160px);
+}
+span.about-item-detail > button{
+  margin-right: 10px;
+}
+
+.btn.btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+.btn.btn-rounded {
+    border-radius: 50px;
+}
+
+a.about-item-edit {
+    float: right;
+} 
+
+
+
+
+
+
+
+
+nav > .nav.nav-tabs{
+
+border: none;
+  color:rgba(255, 255, 255, 0);
+  background:#272e38;
+  border-radius:0;
+
+}
+nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active
+{
+border: none;
+  padding: 18px 25px;
+  color:rgba(255, 255, 255, 0);
+  background:#272e38;
+  border-radius:0;
+}
+
+
+
+nav > div a.nav-item.nav-link:hover,
+nav > div a.nav-item.nav-link:focus
+{
+border: none;
+  background: #0b8800;
+  color:#fff;
+  border-radius:0;
+  transition:background 0.20s linear;
+}

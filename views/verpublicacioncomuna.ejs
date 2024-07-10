@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>ETPEL</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css"  media="screen" href="../css/publicaciones.css" />
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+        <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+        <!-- Bootstrap List Group -->
+        <ul class="list-group">
+            <!-- Separator with title -->
+            <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small> MENU PRINCIPAL</small>
+            </li>
+
+            <!-- /END Separator -->
+            <!-- Menu with submenu -->
+            <% if (rut) { %>
+                <input id="rut" hidden name="rut" value="<%= rut.rut %>">
+
+            <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span class="fa fa-user fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Inicio</span>
+                    <span class="submenu-icon ml-auto"></span>
+
+                </div>
+            </a>
+            <!-- Submenu content -->
+            <div id='submenu1' class="collapse sidebar-submenu">
+                <a href="/perfilalumno/<%= rut.rut %>/<%=rut.id_rol%>" class="list-group-item list-group-item-action bg-secondary font-weight: bolder;">
+                    <span class="menu-collapsed selectbotton">Mi cuenta</span>
+                </a>
+            
+                <a href="/actualizardatosalumno/<%= rut.rut %>" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Editar cuenta</span>
+                </a>
+          
+            </div>
+
+                <!-- MENU 2 BUSQUEDA -->
+            <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span class="fa fa-search fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Busqueda</span>
+                    <span class="submenu-icon ml-auto"></span>
+                </div>
+            </a>    
+            <div id='submenu2' class="collapse sidebar-submenu">
+
+    
+              <a href="/verpublicacion/<%=rut.rut%>" class="list-group-item list-group-item-action bg-dark text-white">
+                <span class="menu-collapsed">Buscar docente</span>
+            </a>
+  
+             </div>
+
+  
+    <!-- MENU 3 CHAT -->
+          
+    <a href="#submenu3" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="fa fa-envelope-o fa-fw mr-3"></span>
+        <span class="menu-collapsed">Mensaje</span>
+          <span class="submenu-icon ml-auto"></span>
+      </div>
+  </a>    
+  <div id='submenu3' class="collapse sidebar-submenu">
+
+
+    <a href="/bandejadeentrada/<%=rut.rut%>" class="list-group-item list-group-item-action bg-dark text-white">
+      <span class="menu-collapsed">Bandeja de mensajes</span>
+  </a>
+  <a href="/chat" class="list-group-item list-group-item-action bg-dark text-white">
+    <span class="menu-collapsed">Charla global</span>
+</a>
+   </div>
+
+   <!-- MENU 4 FAVORITOS -->
+
+   <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-start align-items-center">
+      <span class="fa Example of heart fa-heart fa-fw mr-3"></span>
+      <span class="menu-collapsed">Favorito</span>       
+       <span class="submenu-icon ml-auto"></span>
+    </div>
+</a>    
+<div id='submenu4' class="collapse sidebar-submenu">
+
+
+  <a href="/mostrarfavorito/<%=rut.rut%>" class="list-group-item list-group-item-action bg-dark text-white">
+    <span class="menu-collapsed">Ver favoritos</span>
+</a>
+
+ </div>
+         
+            <!-- Separator without title -->
+            <li class="list-group-item sidebar-separator menu-collapsed"></li>
+            <!-- /END Separator -->
+            <a href="/logout" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-power-off fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Cerrar sesión</span>
+                </div>
+            </a>
+            <a href="#top" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                    <span id="collapse-text" class="menu-collapsed"></span>
+                </div>
+            </a>
+        </ul><!-- List Group END-->
+    </div><!-- sidebar-container END -->
+    
+  <!-- FIN -->
+
+    <!-- MAIN -->
+   
+    <div class="col p-6 colorfondo">
+
+      <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+   
+    </nav><!-- NavBar END -->
+      <!------ MENU---------->
+   
+      <div class="main-content">
+        <div class="container mt-7">
+        <!-- Table -->
+        <section class="search-sec">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+             
+                    <div class="col-lg-12 col-md-3 col-sm-12 p-0">
+                        <a href="/verpublicacion/<%=rut.rut%>" class="btn btn-default wrn-btn">Volver hacia atrás para consultar por otra comuna</a>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+</section>
+
+
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="panel panel-primary filterable">
+                    <div class="panel-heading">
+                        <div class="pull-right">
+                            <button class="btn btn btn-filter"><span class="glyphicon glyphicon-filter"></span> Filtros</button>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr class="filters">
+                             
+                            <th scope="col" width="150">Imagen </th>
+                      <th scope="col" class="col-md-13" style="width: 100;">Información</th>
+                      <th scope="col"style="width: 550px;"   ></th>
+        
+        
+                  <th><div><input class="form-control" style="width: 100px;" placeholder="Modalidad" disabled> </div>
+                 
+                    
+                  </th>
+                  <th><input type="text" class="form-control" style="width: 100px;"  placeholder="Grado"disabled></th>
+                  <th><input type="text" class="form-control"style="width: 100px;"  placeholder="Asignatura" disabled></th>
+                  <th scope="col" ></th>
+                  <th scope="col">Ir a perfil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                          
+                  <% results.forEach((user)=>{ %>
+                    <tr>  
+                      <td><img src="<%=user.imagen%>" width="150" height="150"> </td> 
+            
+                        <td width="300" >
+                
+               
+                          <h7>
+                            <h4>           <%= user.nombre %>  <%= user.snombre %> </h4                                     >
+                              <p><i class="fa fa-usd"></i> <%= user.precio %>          </p>
+                              <p><i class="fa fa-car"></i> <%= user.nombre_comuna %></p>
+                            </h7>
+                        </td >
+                          <td >
+        
+                            <div class="col-xs-12 col-sm-12 col-md-13 excerpet">
+                              <h5><a href="#" title="">                    <%= user.titulo %>
+                              </a></h5>
+                              <p><%= user.resumen %></p>						
+                                      <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                            </div>
+                      <div>  
+                        <td><i class="fa fa-laptop"> </i> <br><%= user.modalidad_nombre %> </td>  
+                        <td><i class="fa fa-user-circle-o"> </i> <br> <%= user.grado_nombre %> </td>
+                        <td><i class="fa fa-book"></i> <br> <%= user.nombre_asignatura %></i></td>
+                      </div>  
+                        <td  hidden>  <%= user.rut %></td>
+        
+                     
+                        <td>
+                          <a  href="verperfil/<%=user.rut%>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>Ver perfil</a>
+                          
+                        </td>
+                    </tr>             
+        
+        
+                    <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+        </body>
+        </html>
+        
+
+        
+        <script>
+        /*
+        Please consider that the JS part isn't production ready at all, I just code it to show the concept of merging filters and titles together !
+        */
+        /*
+        Please consider that the JS part isn't production ready at all, I just code it to show the concept of merging filters and titles together !
+        */
+        $(document).ready(function(){
+            $('.filterable .btn-filter').click(function(){
+                var $panel = $(this).parents('.filterable'),
+                $filters = $panel.find('.filters input'),
+                $tbody = $panel.find('.table tbody');
+                if ($filters.prop('disabled') == true) {
+                    $filters.prop('disabled', false);
+                    $filters.first().focus();
+                } else {
+                    $filters.val('').prop('disabled', true);
+                    $tbody.find('.no-result').remove();
+                    $tbody.find('tr').show();
+                }
+            });
+        
+            $('.filterable .filters input').change(function(e){
+                /* Ignore tab key */
+                var code = e.keyCode || e.which;
+                if (code == '9') return;
+                /* Useful DOM data and selectors */
+                var $input = $(this),
+                inputContent = $input.val().toLowerCase(),
+                $panel = $input.parents('.filterable'),
+                column = $panel.find('.filters th').index($input.parents('th')),
+                $table = $panel.find('.table'),
+                $rows = $table.find('tbody tr');
+                /* Dirtiest filter function ever ;) */
+                var $filteredRows = $rows.filter(function(){
+                    var value = $(this).find('td').eq(column).text().toLowerCase();
+                    return value.indexOf(inputContent) === -1;
+                });
+                /* Clean previous no-result if exist */
+                $table.find('tbody .no-result').remove();
+                /* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+                $rows.show();
+                $filteredRows.hide();
+                /* Prepend no-result row if all rows are filtered */
+                if ($filteredRows.length === $rows.length) {
+                    $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $table.find('.filters th').length +'">No resultados.</td></tr>'));
+                }
+            });
+        });
+        </script>
+             
+   
+
+        <script >
+          $(document).ready(function() {
+          $('#region-dropdown').on('change', function() {
+          var region_id = this.value;
+          $("#ciudad-dropdown").html('');
+          $.ajax({
+          url: "http://localhost:3000/get-states-by-country",
+          type: "POST",
+          data: {
+          name: 'country',
+          region_id: region_id,
+          },
+          dataType: 'json',
+          success: function(result) {
+          $('#ciudad-dropdown').html('<option value="">Selecciona una ciudad</option>');
+          $.each(result.states, function(key, value) {
+          $("#ciudad-dropdown").append('<option value="' + value.id_ciudad + '">' + value.nombre_ciudad + '</option>');
+          });
+          $('#comuna-dropdown').html('<option value="">Selecciona una ciudad primero </option>');
+          }
+          });
+          });
+          $('#ciudad-dropdown').on('change', function() {
+          var ciudad_id = this.value;
+          $("#comuna-dropdown").html('');
+          $.ajax({
+          url: "http://localhost:3000/get-cities-by-state",
+          type: "POST",
+          data: {
+          name: 'state',
+          ciudad_id: ciudad_id,
+          },
+          dataType: 'json',
+          success: function(result) {
+          $('#comuna-dropdown').html('<option value="">Seleccione comuna</option>');
+          $.each(result.cities, function(key, value) {
+          $("#comuna-dropdown").append('<option value="' + value.id_comuna + '">' + value.nombre_comuna + '</option>');
+          });
+          }
+          });
+          });
+          }); 
+          </script>
+        
+<script type="text/javascript">
+	// Hide submenus
+$('#body-row .collapse').collapse('hide'); 
+
+// Collapse/Expand icon
+$('#collapse-icon').addClass('fa-angle-double-left'); 
+
+// Collapse click
+$('[data-toggle=sidebar-colapse]').click(function() {
+    SidebarCollapse();
+});
+
+function SidebarCollapse () {
+    $('.menu-collapsed').toggleClass('d-none');
+    $('.sidebar-submenu').toggleClass('d-none');
+    $('.submenu-icon').toggleClass('d-none');
+    $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+    
+    // Treating d-flex/d-none on separators with title
+    var SeparatorTitle = $('.sidebar-separator-title');
+    if ( SeparatorTitle.hasClass('d-flex') ) {
+        SeparatorTitle.removeClass('d-flex');
+    } else {
+        SeparatorTitle.addClass('d-flex');
+    }
+    
+    // Collapse/Expand icon
+    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+}	</script>
+</body>
+</html>
+
+
+<style>
+
+    .search-sec{
+        background: #f7f7f7;padding: 2rem;
+    }
+    .search-slt{
+        display: block;
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: #55595c;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        height: calc(3rem + 2px) !important;
+        border-radius:0;
+    }
+    .wrn-btn{
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: capitalize;
+         height: calc(3rem + 2px) !important;
+         border-radius:0;
+    }
+    
+    
+    </style>
+    
